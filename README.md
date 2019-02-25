@@ -63,12 +63,12 @@ Notes:
   - Quoting and the difference between double `"` and single `'` quotes. (See more on variable expansion below.)
 
 - **Familiarize yourself with Bash job management:**
+  - **ctrl-c** - Sends an **interrupt** signal, that effectively kills the program actively running in the shell.
+  - **ctrl-z** - Sends a **stop** signal to the shell, that places the active program on hold, returning control to the shell(User) without **killing** the job. 
   - [ `&` ] - 
-  - **ctrl-z** - 
-  - **ctrl-c** - 
   - [ `jobs` ] - 
-  - [ `fg` ] - 
-  - [ `bg` ] - 
+  - [ `fg` ] - Resumes the last **stoped** job in the foreground allowing the user to interact with it again. 
+  - [ `bg` ] - Resumes the last **stoped** job in the background allowing the user to start and interact with other jobs.
   - [ `kill` ] - 
   - etc.
 
