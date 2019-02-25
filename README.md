@@ -1,25 +1,11 @@
 🌍
-*[Čeština](README-cs.md) ∙ [Deutsch](README-de.md) ∙ [Ελληνικά](README-el.md) ∙ [English](README.md) ∙ [Español](README-es.md) ∙ [Français](README-fr.md) ∙ [Indonesia](README-id.md) ∙ [Italiano](README-it.md) ∙ [日本語](README-ja.md) ∙ [한국어](README-ko.md) ∙ [Português](README-pt.md) ∙ [Română](README-ro.md) ∙ [Русский](README-ru.md) ∙ [Slovenščina](README-sl.md) ∙ [Українська](README-uk.md) ∙ [简体中文](README-zh.md) ∙ [繁體中文](README-zh-Hant.md)*
-
-
 # The Art of Command Line
 
 [![Ask a Question](https://img.shields.io/badge/%3f-Ask%20a%20Question-ff69b4.svg)](https://airtable.com/shrzMhx00YiIVAWJg)
 
 [![Join the chat at https://gitter.im/jlevy/the-art-of-command-line](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jlevy/the-art-of-command-line?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-
-- [Meta](#meta)
-- [Basics](#basics)
-- [Everyday use](#everyday-use)
-- [Processing files and data](#processing-files-and-data)
-- [System debugging](#system-debugging)
-- [One-liners](#one-liners)
-- [Obscure but useful](#obscure-but-useful)
-- [macOS only](#macos-only)
-- [Windows only](#windows-only)
-- [More resources](#more-resources)
-- [Disclaimer](#disclaimer)
+[Meta](#meta) | [Basics](#basics) | [Everyday use](#everyday-use) | [Processing files and data](#processing-files-and-data) | [System debugging](#system-debugging) | [One-liners](#one-liners) | [Obscure but useful](#obscure-but-useful) | [macOS only](#macos-only) | [Windows only](#windows-only) | [More resources](#more-resources) | [Disclaimer](#disclaimer)
 
 
 ![curl -s 'https://raw.githubusercontent.com/jlevy/the-art-of-command-line/master/README.md' | egrep -o '`\w+`' | tr -d '`' | cowsay -W50](cowsay.png)
@@ -53,28 +39,40 @@ Notes:
 
 ## Basics
 
-- **A great place to start** is to actually, type **$ man bash** & at least skim the whole thing. It's pretty easy to follow and not that long. Alternate shells can be nice, but Bash is powerful and always available
+- **A great place to start** is to actually, type [ `$ man bash` ] & at least skim the whole thing. It's pretty easy to follow and not that long. Alternate shells can be nice, but Bash is powerful and always available
 (learning *only* zsh, fish, etc., while tempting on your own laptop, restricts you in many situations, such as using existing servers).
 
 - **Learn how to use at least one text-based editor well**. The `nano` editor is one of the simplest for basic editing (opening, editing, saving, searching). However, for the power user in a text terminal, there is no substitute for Vim (`vi`), the hard-to-learn but venerable, fast, and full-featured editor. Many people also use the classic Emacs, particularly for larger editing tasks. (Of course, any modern software developer working on an extensive project is unlikely to use only a pure text-based editor and should also be familiar with modern graphical IDEs and tools.)
 
 - **Finding documentation:**
-  - Know how to read official documentation with **man** (for the inquisitive, **$ man man**; lists the section numbers, e.g. 1 is "regular" commands, 5 is files/conventions, and 8 are for administration). Find man pages with *apropos*.
+  - Know how to read official documentation with **man** (for the inquisitive, [ `$ man man` ]; lists the section numbers, e.g. 1 is "regular" commands, 5 is files/conventions, and 8 are for administration). Find man pages with *apropos*.
   
-  - Know that some commands are not executables, but Bash builtins, and that you can get help on them with `help` and `help -d`. You can find out whether a command is an executable, shell builtin or an alias by using `type command`.
+  - Commands are not always executables. Other possibilities include Bash builtins, and aliases. You can find out more about a command by using `help` and `help -d`. You can find out whether a command is an executable, shell builtin or an alias by using
+  [ `$ type <command>` ].
   - `curl cheat.sh/command` will give a brief "cheat sheet" with common examples of how to use a shell command.
 
 - **Input & output redirection:**
-  - "`>`", "`<`" & pipes using "`|`".
+  - [ `>` ], [ `<` ] & pipes using [ `|` ]
   
-  - "`>`" overwrites the output file & "`>>`" appends.
+  - [ `>` ] overwrites the output file & [ `>>` ] appends.
   - Learn about stdout and stderr.
 
-- Learn about file glob expansion with `*` (and perhaps `?` and `[`...`]`) and quoting and the difference between double `"` and single `'` quotes. (See more on variable expansion below.)
+- **File glob expansion** with:
+  - [ `*` ], [ `?` ] & [ `[`...`]` ]
+  
+  - Quoting and the difference between double `"` and single `'` quotes. (See more on variable expansion below.)
 
-- Be familiar with Bash job management: `&`, **ctrl-z**, **ctrl-c**, `jobs`, `fg`, `bg`, `kill`, etc.
+- **Familiarize yourself with Bash job management:**
+  - [ `&` ] - 
+  - **ctrl-z** - 
+  - **ctrl-c** - 
+  - [ `jobs` ] - 
+  - [ `fg` ] - 
+  - [ `bg` ] - 
+  - [ `kill` ] - 
+  - etc.
 
-- Know `ssh`, and the basics of passwordless authentication, via `ssh-agent`, `ssh-add`, etc.
+- **Get to know** [ `ssh` ], and the basics of passwordless authentication, via [ `ssh-agent` ], [ `ssh-add` ], etc.
 
 - Basic file management: `ls` and `ls -l` (in particular, learn what every column in `ls -l` means), `less`, `head`, `tail` and `tail -f` (or even better, `less +F`), `ln` and `ln -s` (learn the differences and advantages of hard versus soft links), `chown`, `chmod`, `du` (for a quick summary of disk usage: `du -hs *`). For filesystem management, `df`, `mount`, `fdisk`, `mkfs`, `lsblk`. Learn what an inode is (`ls -i` or `df -i`).
 
